@@ -26,13 +26,24 @@ const LanguageSelector = ({ language, onSelect }) => {
           <MenuButton as={Button}>{language}</MenuButton>
           <MenuList bg="#110c1b">
             {/* loop through the languages and versions and map each pair to the menu drop down items */}
-            {languages.map(([language, version]) => (
-              <MenuItem key={language} onClick={() => onSelect(language)}>
-                {language}
+            {languages.map(([languageItem, version]) => (
+              <MenuItem
+                key={languageItem}
+                // set text color and background color to be different for the language item that matches the currently selected language held in state, showing "active" selection
+                color={languageItem === language ? "blue.400" : ""}
+                bg={languageItem === language ? "gray.900" : "transparent"}
+                onClick={() => onSelect(languageItem)}
+                // show alterante style for language item under a hover state
+                _hover={{
+                  color: "blue.400",
+                  bg: "gray.900",
+                }}
+              >
+                {languageItem}
                 {/* nbsp: an HTML entity that is used to create a space that wont break into a new line, keeps two words or in this case phrases together */}
                 &nbsp;
                 <Text as="span" color="gray.600" fontSize="sm">
-                  {version}
+                  ({version})
                 </Text>
               </MenuItem>
             ))}
