@@ -14,7 +14,8 @@ import { LANGUAGE_VERSIONS } from "../Constants";
 //brings in the language and version constants from the Constants.js file
 const languages = Object.entries(LANGUAGE_VERSIONS);
 
-const LanguageSelector = () => {
+// default the button to javascript, handle the state change of language selection
+const LanguageSelector = ({ language, onSelect }) => {
   return (
     <Box>
       <Text mb={2} fontSize="lg">
@@ -22,11 +23,11 @@ const LanguageSelector = () => {
       </Text>
       <Box>
         <Menu>
-          <MenuButton as={Button}>Javascript</MenuButton>
+          <MenuButton as={Button}>{language}</MenuButton>
           <MenuList>
             {/* loop through the languages and versions and map each pair to the menu drop down items */}
             {languages.map(([language, version]) => (
-              <MenuItem key={language}>
+              <MenuItem key={language} onClick={() => onSelect(language)}>
                 {language}
                 {/* nbsp: an HTML entity that is used to create a space that wont break into a new line, keeps two words or in this case phrases together */}
                 &nbsp;
