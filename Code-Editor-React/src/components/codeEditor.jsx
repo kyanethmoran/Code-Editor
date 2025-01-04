@@ -34,7 +34,7 @@ function CodeEditor() {
         height="75vh"
         theme="vs-dark"
         language={language}
-        defaultValue="//Type Your code Here..."
+        defaultValue={CODE_SNIPPETS[language]}
         onMount={onMount}
         value={value}
         onChange={handleChange}
