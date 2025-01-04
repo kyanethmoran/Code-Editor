@@ -2,6 +2,7 @@ import { Box } from "@chakra-ui/react";
 import { Editor } from "@monaco-editor/react";
 import { useRef, useState } from "react";
 import LanguageSelector from "./LanguageSelector";
+import { CODE_SNIPPETS } from "../Constants";
 
 function CodeEditor() {
   const editorRef = useRef();
@@ -19,9 +20,10 @@ function CodeEditor() {
     editor.focus();
   };
 
-  // when the language is selected, the language to be used by the editor should be changed
+  // when the language is selected, the language to be used by the editor should be changed, language specific boilerplate code should be displayed in inputfield
   const onSelect = (language) => {
     setLanguage(language);
+    setValue(CODE_SNIPPETS[language]);
   };
 
   return (
