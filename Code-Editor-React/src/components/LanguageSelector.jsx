@@ -17,14 +17,14 @@ const languages = Object.entries(LANGUAGE_VERSIONS);
 // default the button to javascript, handle the state change of language selection
 const LanguageSelector = ({ language, onSelect }) => {
   return (
-    <Box>
+    <Box ml={2} mb={4}>
       <Text mb={2} fontSize="lg">
         Language:
       </Text>
       <Box>
-        <Menu>
+        <Menu isLazy>
           <MenuButton as={Button}>{language}</MenuButton>
-          <MenuList>
+          <MenuList bg="#110c1b">
             {/* loop through the languages and versions and map each pair to the menu drop down items */}
             {languages.map(([language, version]) => (
               <MenuItem key={language} onClick={() => onSelect(language)}>
