@@ -43,7 +43,8 @@ function CodeEditor() {
             onChange={handleChange}
           />
         </Box>
-        <Output />
+        {/* for output functionality we need to pass the input and what language the code is written in */}
+        <Output editorRef={editorRef} language={language} />
       </HStack>
     </Box>
   );

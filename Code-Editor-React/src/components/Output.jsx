@@ -1,8 +1,13 @@
 import { Box, Button, Text } from "@chakra-ui/react";
 import React from "react";
 
-const Output = () => {
-  const runCode = async () => {};
+const Output = ({ editorRef, language }) => {
+  const runCode = async () => {
+    const sourceCode = editorRef.current.getValue();
+    if (!sourceCode) return;
+    try {
+    } catch (error) {}
+  };
 
   return (
     <Box w="50%">
