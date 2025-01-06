@@ -23,4 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 Code-Editor-React/src/KEYS.js
-Code-Editor-React/src/API.js
