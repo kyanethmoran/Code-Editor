@@ -1,4 +1,4 @@
-// CONSTANTS FOR LANGUAGE SELECTOR
+// CONSTANTS FOR LANGUAGE SELECTOR *update later to get dynamically incase versions change and differ from what is hard coded*
 export const LANGUAGE_VERSIONS = {
   javascript: "18.15.0",
   typescript: "5.0.3",
