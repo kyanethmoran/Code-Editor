@@ -17,3 +17,9 @@ export const executeCode = async (language, sourceCode) => {
   });
   return response.data;
 };
+
+// get the supported languages and current versions from piston api
+export const getVersions = async () => {
+  const versionResponse = await API.get("/runtimes");
+  return versionResponse.data;
+};
