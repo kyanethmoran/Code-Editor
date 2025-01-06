@@ -10,16 +10,16 @@ export const LANGUAGE_VERSIONS = {
 
 // CONSTANTS FOR LANGUAGE OPTION BOILERPLATE
 export const CODE_SNIPPETS = {
-  javascript: `//Type Your Code Here...\nfunction greet(name) {\n\tconsole.log("Hello, " + name + "!";\n}\n\ngreet("World");\n`,
+  javascript: `//Type Your Code Here...\nfunction greet(name) {\n\tconsole.log("Hello, " + name + " in JS!");\n}\n\ngreet("World");\n`,
 
-  typescript: `//Type Your Code Here...\ntype Params = {\n\tname: string;\n}\n\nfunction greet(data: Params) {\n\tconsole.log("Hello, " + data.name + "!");\n}\n\ngreet({name: "World" });\n`,
+  typescript: `//Type Your Code Here...\ntype Params = {\n\tname: string;\n}\n\nfunction greet(data: Params) {\n\tconsole.log("Hello, " + data.name + " in TS!");\n}\n\ngreet({name: "World" });\n`,
 
-  python: `#Type Your Code Here...\ndef greet(name):\n\tprint("Hello, " + name + "!")\n\ngreet("World")\n`,
+  python: `#Type Your Code Here...\ndef greet(name):\n\tprint("Hello, " + name + " in Python!")\n\ngreet("World")\n`,
 
-  java: `//Type Your Code Here..\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World");\n\t}\n}\n`,
+  java: `//Type Your Code Here..\npublic class HelloWorld {\n\tpublic static void main(String[] args) {\n\t\tSystem.out.println("Hello World in Java!");\n\t}\n}\n`,
 
   csharp:
-    '//Type Your Code Here...\nusing System;\n\nnamespace HelloWorld\n{\n\tclass Hello { \n\t\tstatic void Main(string[] args) {\n\t\t\tConsole.WriteLine("Hello World in C#");\n\t\t}\n\t}\n}\n',
+    '//Type Your Code Here...\nusing System;\n\nnamespace HelloWorld\n{\n\tclass Hello { \n\t\tstatic void Main(string[] args) {\n\t\t\tConsole.WriteLine("Hello World in C#!");\n\t\t}\n\t}\n}\n',
 
-  php: "//Type Your Code Here...\n<?php\n\n$name = 'Hello World';\necho $name;\n",
+  php: "<?php\n//Type Your Code Here...\n\n$name = 'Hello World in PHP!';\necho $name;\n",
 };
