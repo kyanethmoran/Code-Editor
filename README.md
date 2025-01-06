@@ -32,3 +32,5 @@ incorrect based on response
     [] Show percentage of coding challenges completed out of the available challenges
 
     [] Add timer option to coding challenges for "speed runs"
+
+[] Add testing to ensure at least 80% code coverage
