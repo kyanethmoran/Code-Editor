@@ -18,7 +18,7 @@ const Output = ({ editorRef, language }) => {
   return (
     <Box w="50%">
       <Text mb={2} fontSize="lg">
-        Output
+        Output:
       </Text>
       <Button variant="outline" colorScheme="green" mb={4} onClick={runCode}>
         Run Code
