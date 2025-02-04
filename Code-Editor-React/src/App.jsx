@@ -9,9 +9,17 @@ import { useState } from "react";
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const colorPalettes = {
+  const colorPalette = {
     darkBg: "#0f0a19",
-    lightBg: "#d4ebf2",
+    lightBg: "#D3D3D3",
+    // darkColor: "",
+    // lightColor: "",
+    buttons: {
+      lightBtnColor: "grey",
+      darkBtnColor: "",
+      lightBtnVarient: "",
+      darkBtnVarient: "",
+    },
   };
 
   const handleThemeMode = () => {
@@ -23,7 +31,7 @@ function App() {
     <ChakraProvider theme={theme}>
       <Box
         minH="100vh"
-        bg={`${isDarkMode ? colorPalettes.darkBg : colorPalettes.lightBg}`}
+        bg={`${isDarkMode ? colorPalette.darkBg : colorPalette.lightBg}`}
         color="gray.500"
         px={6}
         py={8}
@@ -42,22 +50,32 @@ function App() {
               <Flex justify="inline" alignItems="center">
                 {isDarkMode ? (
                   <div>
-                    <IconButton size="sm">
-                      <MdNightlight onClick={handleThemeMode} />
-                    </IconButton>
+                    <IconButton
+                      size="sm"
+                      aria-label="dark mode"
+                      rounded="full"
+                      onClick={handleThemeMode}
+                      icon={<MdNightlight />}
+                    />
                   </div>
                 ) : (
                   <div>
-                    <IconButton size="sm">
-                      <MdLightMode onClick={handleThemeMode} />
-                    </IconButton>
+                    <IconButton
+                      size="sm"
+                      aria-label="light mode"
+                      colorScheme="accent"
+                      bg="yellow"
+                      rounded="full"
+                      onClick={handleThemeMode}
+                      icon={<MdLightMode />}
+                    />
                   </div>
                 )}
               </Flex>
             </Flex>
           </Flex>
         </Flex>
-
+        {/* Code edition component */}
         <CodeEditor />
       </Box>
     </ChakraProvider>
