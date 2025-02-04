@@ -7,24 +7,27 @@ import theme from "./Theme";
 import { useState } from "react";
 
 function App() {
-  const bgColor = {
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const colorPalettes = {
     darkBg: "#0f0a19",
     lightBg: "#d4ebf2",
   };
-  const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const handleLightMode = () => {
-    setIsDarkMode(false);
-    console.log("light");
+  const handleThemeMode = () => {
+    setIsDarkMode(!isDarkMode);
+    console.log(isDarkMode);
   };
 
-  const handleDarkMode = () => {
-    setIsDarkMode(true);
-    console.log("dark");
-  };
   return (
     <ChakraProvider theme={theme}>
-      <Box minH="100vh" bg={bgColor.darkBg} color="gray.500" px={6} py={8}>
+      <Box
+        minH="100vh"
+        bg={`${isDarkMode ? colorPalettes.darkBg : colorPalettes.lightBg}`}
+        color="gray.500"
+        px={6}
+        py={8}
+      >
         {/* code for header */}
         <Flex direction="column">
           <Flex
@@ -40,13 +43,13 @@ function App() {
                 {isDarkMode ? (
                   <div>
                     <IconButton size="sm">
-                      <MdNightlight onClick={handleLightMode} />
+                      <MdNightlight onClick={handleThemeMode} />
                     </IconButton>
                   </div>
                 ) : (
                   <div>
                     <IconButton size="sm">
-                      <MdLightMode onClick={handleDarkMode} />
+                      <MdLightMode onClick={handleThemeMode} />
                     </IconButton>
                   </div>
                 )}
