@@ -1,9 +1,7 @@
-"use client";
-import { Box, ChakraProvider, IconButton } from "@chakra-ui/react";
-import CodeEditor from "./components/codeEditor";
-import { Flex } from "@chakra-ui/react";
+import { Box, ChakraProvider, IconButton, Flex } from "@chakra-ui/react";
 import { MdNightlight, MdLightMode } from "react-icons/md";
 import theme from "./Theme";
+import CodeEditor from "./components/codeEditor";
 import { useState } from "react";
 
 function App() {
@@ -12,8 +10,7 @@ function App() {
   const colorPalette = {
     darkBg: "#0f0a19",
     lightBg: "#D3D3D3",
-    // darkColor: "",
-    // lightColor: "",
+    color: "gray.500",
     buttons: {
       lightBtnColor: "grey",
       darkBtnColor: "",
@@ -24,7 +21,6 @@ function App() {
 
   const handleThemeMode = () => {
     setIsDarkMode(!isDarkMode);
-    console.log(isDarkMode);
   };
 
   return (
@@ -32,7 +28,7 @@ function App() {
       <Box
         minH="100vh"
         bg={`${isDarkMode ? colorPalette.darkBg : colorPalette.lightBg}`}
-        color="gray.500"
+        color={colorPalette.color}
         px={6}
         py={8}
       >
@@ -63,8 +59,9 @@ function App() {
                     <IconButton
                       size="sm"
                       aria-label="light mode"
-                      colorScheme="accent"
-                      bg="yellow"
+                      colorScheme="gray"
+                      variant="outline"
+                      bg="gray.500"
                       rounded="full"
                       onClick={handleThemeMode}
                       icon={<MdLightMode />}
