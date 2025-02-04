@@ -39,18 +39,12 @@ function App() {
               <Flex justify="inline" alignItems="center">
                 {isDarkMode ? (
                   <div>
-                    {/* <Button onClick={handleLightMode}>
-                      <Icon as={MdNightlight} />
-                    </Button> */}
                     <IconButton size="sm">
                       <MdNightlight onClick={handleLightMode} />
                     </IconButton>
                   </div>
                 ) : (
                   <div>
-                    {/* <Button onClick={handleDarkMode}>
-                      <Icon as={MdLightMode} />
-                    </Button> */}
                     <IconButton size="sm">
                       <MdLightMode onClick={handleDarkMode} />
                     </IconButton>
