@@ -17,7 +17,7 @@ Axios: https://axios-http.com/docs/intro
 [x] Create code editor that allows user to select from a list of coding languages and execute
 their code to see the result, including errors
 
-[] Add toggle to allow user to select between darkmode and lightmode themes
+[x] Add toggle to allow user to select between darkmode and lightmode themes
 
 [] Dynamically bring in the languages and language versions accepted by monaco-editor to ensure
 up to date requests are being made and expand language availability
